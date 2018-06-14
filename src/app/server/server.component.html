@@ -1,1 +1,5 @@
-<h3>Server Component</h3>
+<div class="row">
+    <div class="col-lg-12" [ngStyle]="{'background-color': getColor()}" [ngClass]="{online: serverStatus == 'online'}">
+        <h4>Server: {{ serverId }} : {{serverStatus}}</h4>
+    </div>
+</div>
