@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent {
   isAddingServerDisabled = true;
   serverCreationStatus = '';
-  serverName = ''
-  userName = ''
-  servers = []
+  serverName = '';
+  userName = '';
+  servers = [];
+  showDetails = false;
+  items: number[] = [];
+  currentItem = 0;
 
   constructor() {
     setTimeout(() => {
@@ -25,5 +28,10 @@ export class ServersComponent {
 
   onResetUserName() {
     this.userName = ''
+  }
+  
+  onToggleDetails() {
+    this.showDetails = !this.showDetails;
+    this.items.push(++this.currentItem);
   }
 }

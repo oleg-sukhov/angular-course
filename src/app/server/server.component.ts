@@ -27,8 +27,4 @@ export class ServerComponent {
             this.disableAddingNewServer = false;
         }, 3000);
     }
-
-    getColor() {
-        return this.serverStatus === 'online' ? 'green' : 'red';
-    }
 }

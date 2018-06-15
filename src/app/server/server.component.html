@@ -1,5 +1,7 @@
 <div class="row">
-    <div class="col-lg-12" [ngStyle]="{'background-color': getColor()}" [ngClass]="{online: serverStatus == 'online'}">
-        <h4>Server: {{ serverId }} : {{serverStatus}}</h4>
+    <div class="col-lg-12" >
+        <div class="alert" [ngClass]="{'alert-success': serverStatus == 'online', 'alert-danger': serverStatus == 'offline'}" role="alert">
+            <p [ngStyle]="{'padding-left': '10px'}">Server: {{ serverId }} : {{serverStatus}}</p>
+        </div>
     </div>
 </div>
