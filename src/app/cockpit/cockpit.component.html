@@ -1,0 +1,15 @@
+<div class="tow">
+  <div class="col-12">
+    <h2>Add new servers or blueprints</h2>
+    <label>Server Name</label>
+    <input type="text" class="form-control" #serverNameImput>
+    <label>Server Content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <input type="text" class="form-control" #serverContentInput>
+    <br>
+    <div class="btn-group">
+      <button class="btn btn-success" (click)="onAddServer(serverNameImput)" [disabled]="newServerName === '' || newServerContent === ''">Add Server</button>
+      <button class="btn btn-warning" (click)="onAddBlueprint(serverNameImput)" [disabled]="newServerName === '' || newServerContent === ''">Add Blueprint</button>
+    </div>
+  </div>
+</div>
