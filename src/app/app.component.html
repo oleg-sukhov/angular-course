@@ -11,4 +11,9 @@
             </app-server-element>
         </div>
     </div>
+    <app-game-control (numberEvent)="onNumberEvent($event)"></app-game-control>
+    <div *ngFor="let numberEvent of numbers">
+        <app-even *ngIf="numberEvent.type === 'even'" [value]="numberEvent.value"></app-even>
+        <app-odd *ngIf="numberEvent.type === 'odd'" [value]="numberEvent.value"></app-odd>
+    </div>
 </div>

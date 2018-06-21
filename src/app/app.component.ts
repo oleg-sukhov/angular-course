@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements = []
+  numbers = []
 
   onAddServer(serverData: { name: string, content: string }) {
     this.serverElements.push({
@@ -22,5 +23,10 @@ export class AppComponent {
       name: blueprintData.name,
       content: blueprintData.content
     });
+  }
+
+  onNumberEvent(numberEvent: {type: 'odd'|'even', value: number} ) {
+    this.numbers.push(numberEvent);
+    console.log(numberEvent);
   }
 }
