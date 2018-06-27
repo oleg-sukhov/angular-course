@@ -1,0 +1,14 @@
+<div class="row" style="margin-top: 10px">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a class="list-group-item" *ngFor="let server of servers" (click)="onServerSelect(server)">
+        {{server.name}}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8">
+    <app-edit-server [server]="selectedServer"></app-edit-server>
+    <hr>
+    <app-server [server]="selectedServer"></app-server>
+  </div>
+</div>
