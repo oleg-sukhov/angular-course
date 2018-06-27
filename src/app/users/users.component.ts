@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-users',
@@ -6,18 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users: { name: string }[] = [
-    { name: 'Bob' }, 
-    { name: 'Mark' }, 
-    { name: 'Brien' },
-    { name: 'Josh' },
-    { name: 'Bill' },
-    { name: 'Donald' }
-  ]
+  users: { id: number, firstName: string, lastName: string, birthday: Date }[];
 
-  constructor() { }
+  constructor(private usersService: UsersService) {}
 
   ngOnInit() {
+    this.users = this.usersService.getUsers();
   }
-
 }

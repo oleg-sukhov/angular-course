@@ -1,12 +1,12 @@
-<div class="row">
+<div class="row" style="margin-top: 10px">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
-      <a href="#" class="list-group-item" *ngFor="let user of users">
-        {{user.name}}
+      <a class="list-group-item" *ngFor="let user of users" [routerLink]="['/users', user.id]">
+        {{user.firstName}} {{user.lastName}}
       </a>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-4">
-    <app-user></app-user>
+  <div class="col-xs-12 col-sm-8">
+    <router-outlet></router-outlet>
   </div>
 </div>
