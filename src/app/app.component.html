@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-xs-3">
+            <ul class="list-group">
+                <li class="list-group-item" routerLinkActive="active">
+                    <a routerLink="/home">Home</a>
+                </li>
+                <li class="list-group-item" routerLinkActive="active">
+                    <a [routerLink]="['user', 1]" >User 1 {{user1Activated ? 'activated' : ''}}</a>
+                </li>
+                <li class="list-group-item" routerLinkActive="active">
+                    <a [routerLink]="['user', 2]">User 2 {{user2Activated ? 'activated' : ''}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
