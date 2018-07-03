@@ -5,9 +5,6 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
-  isRecipeSelected: boolean = false;
-
   private recipes: Recipe[] = [
     {
       id: 1,
@@ -49,8 +46,7 @@ export class RecipeService {
 
   selectRecipe(id: number): Recipe {
     const selectedRecipe = this.recipes.find((recipe: Recipe) => recipe.id === id);
-    this.isRecipeSelected = true;
-    return {...selectedRecipe};
+    return { ...selectedRecipe };
   }
 
   sendIngredientsToShoppingList(recipeName: string) {
