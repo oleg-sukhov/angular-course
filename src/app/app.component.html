@@ -48,4 +48,37 @@
             <p>Gander: {{user.gender}}</p>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onMailSubmit()" #fr="ngForm">
+                <div class="form-group">
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" class="form-control" name="mail" ngModel required email #mail="ngModel">
+                    <span *ngIf="mail.invalid && mail.touched" class="help-block">Please enter valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" name="password" ngModel required #password="ngModel">
+                    <span *ngIf="password.invalid && password.touched" class="help-block">Please enter password</span>
+                </div>
+                <div class="form-group">
+                    <label for="level">Level</label>
+                    <select type="text" id="level" class="form-control" name="level" ngModel [ngModel]="defaultLevel">
+                        <option [value]="level" *ngFor="let level of levels">{{ level }}</option>
+                    </select>
+                </div>
+                <span *ngIf="fr.invalid && fr.touched" class="help-block">The from is invalid!!!</span>
+                <button class="btn btn-success" type="submit" [disabled]="fr.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr *ngIf="mailSubmited">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" *ngIf="mailSubmited">
+            <h4>Eamil data:</h4>
+            <p>Email: {{mailData.email}}</p>
+            <p>Password: {{mailData.password}}</p>
+            <p>Level: {{mailData.level}} </p>
+        </div>
+    </div>
+    <hr *ngIf="mailSubmited">
